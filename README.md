@@ -1,2 +1,2 @@
-# project
+# Project
 ini project pertama saya
