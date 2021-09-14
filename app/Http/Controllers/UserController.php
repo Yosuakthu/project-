@@ -27,7 +27,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        $user = User::all();
+        return view('users.create',compact('user'));
     }
 
     /**
@@ -41,7 +42,8 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed',
+            'role_id' => 'required'
         ]);
         $array = $request->only([
             'name', 'email', 'password'

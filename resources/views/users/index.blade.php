@@ -8,16 +8,21 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    @hasanyrole('admin|super admin')
                     <a href="{{route('users.create')}}" class="btn btn-primary mb-2">
                         Tambah
                     </a>
+                    @endhasanyrole
                     <table class="table table-hover table-bordered table-stripped" id="example2">
                         <thead>
                         <tr>
                             <th>No.</th>
                             <th>Nama</th>
                             <th>Email</th>
+                            <th>Level</th>
+                            @hasanyrole('admin|super admin')
                             <th>Opsi</th>
+                            @endhasanyrole
                         </tr>
                         </thead>
                         <tbody>
@@ -26,6 +31,8 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
+                                <td>{{$user->role_id}}</td>
+                                @hasanyrole('admin|super admin')
                                 <td>
                                     <a href="{{route('users.edit', $user)}}" class="btn btn-primary btn-xs">
                                         Edit
@@ -34,6 +41,7 @@
                                         Delete
                                     </a>
                                 </td>
+                                @endhasanyrole
                             </tr>
                         @endforeach
                         </tbody>

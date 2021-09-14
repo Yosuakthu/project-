@@ -34,6 +34,12 @@
                         <label for="exampleInputPassword">Konfirmasi Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword" placeholder="Konfirmasi Password" name="password_confirmation">
                     </div>
+                    <label for="exampleInputName">Pilih Level User</label>
+                <select name="level" id="level" class="form-control select2" placeholder="Pilih Level">
+                    <option selected disabled value>Pilih level</option>
+                    
+             
+                </select>
 
                 </div>
 
